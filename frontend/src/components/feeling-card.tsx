@@ -3,6 +3,7 @@ import BadIcon from "../assets/icons/bad";
 import GoodIcon from "../assets/icons/good";
 import MehIcon from "../assets/icons/meh";
 import RadIcon from "../assets/icons/rad";
+import { Mood } from "../lib/api/types";
 import Card from "./card";
 import EmblaCarousel from "./embla-carousel";
 import MoodEntryButton from "./mood-entry-button";
@@ -22,24 +23,37 @@ const FeelingCard = () => {
         >
           <div className="flex flex-col gap-2 items-center justify-center w-full h-full">
             <MoodEntryButton
+              mood={Mood.Awful}
               icon={<AwfulIcon className="cursor-pointer hover:scale-110" />}
             />
             <p className="font-semibold">Awful</p>
           </div>
           <div className="flex flex-col gap-2 items-center justify-center w-full h-full">
-            <BadIcon className="cursor-pointer hover:scale-110" />
+            <MoodEntryButton
+              mood={Mood.Bad}
+              icon={<BadIcon className="cursor-pointer hover:scale-110" />}
+            />
             <p className="font-semibold">Bad</p>
           </div>
           <div className="flex flex-col gap-2 items-center justify-center w-full h-full">
-            <MehIcon className="cursor-pointer hover:scale-110" />
+            <MoodEntryButton
+              mood={Mood.Meh}
+              icon={<MehIcon className="cursor-pointer hover:scale-110" />}
+            />
             <p className="font-semibold">Meh</p>
           </div>
           <div className="flex flex-col gap-2 items-center justify-center w-full h-full">
-            <GoodIcon className="cursor-pointer hover:scale-110" />
+            <MoodEntryButton
+              mood={Mood.Good}
+              icon={<GoodIcon className="cursor-pointer hover:scale-110" />}
+            />
             <p className="font-semibold">Good</p>
           </div>
           <div className="flex flex-col gap-2 items-center justify-center w-full h-full">
-            <RadIcon className="cursor-pointer hover:scale-110" />
+            <MoodEntryButton
+              mood={Mood.Rad}
+              icon={<RadIcon className="cursor-pointer hover:scale-110" />}
+            />
             <p className="font-semibold">Rad</p>
           </div>
         </EmblaCarousel>

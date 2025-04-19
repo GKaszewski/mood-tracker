@@ -4,6 +4,8 @@ export type Activity = {
     user_id: string;
 };
 
+export type GetActivityResponse = string[];
+
 export type CreateActivityRequest = {
     name: string;
 }
@@ -32,7 +34,7 @@ export type MoodEntry = {
 
 export type CreateMoodEntryRequest = {
     mood: Mood;
-    activities: string[] | null;
+    activities: string | null;
     note: string | null;
 }
 

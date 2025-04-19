@@ -2,7 +2,7 @@ import { Button } from "react-aria-components";
 import { useAuth } from "react-oidc-context";
 import MoodTrend from "./components/mood-trend";
 import FeelingCard from "./components/feeling-card";
-import MoodsList from "./components/moods-list";
+import RecentEntries from "./components/recent-entries";
 
 function App() {
   const auth = useAuth();
@@ -26,8 +26,8 @@ function App() {
           Logout
         </Button>
         <FeelingCard />
-        {/* <MoodsList /> */}
         <MoodTrend />
+        <RecentEntries />
       </div>
     );
   }

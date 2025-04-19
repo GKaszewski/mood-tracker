@@ -3,16 +3,17 @@ import {
   CreateActivityRequest,
   Activity,
   UpdateActivityRequest,
+  GetActivityResponse,
 } from "../api/types";
 import useAxiosInterceptor from "./use-interceptor";
 
 export const useActivities = () => {
   const base = useAxiosInterceptor();
 
-  return useQuery<Activity[], Error>({
+  return useQuery<GetActivityResponse, Error>({
     queryKey: ["activities"],
-    queryFn: async (): Promise<Activity[]> => {
-      const response = await base.get<Activity[]>("/api/activities");
+    queryFn: async (): Promise<GetActivityResponse> => {
+      const response = await base.get<GetActivityResponse>("/api/activities");
       return response.data;
     },
   });
